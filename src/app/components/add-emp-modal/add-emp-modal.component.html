@@ -1,0 +1,129 @@
+<nz-modal
+  [nzVisible]="mo.number == 3 && mo.isVisible"
+  (nzOnCancel)="handleCancel()"
+  [nzCentered]="true"
+  [nzCloseIcon]="false"
+  [nzFooter]="null"
+  [nzWidth]="700"
+>
+  <div *nzModalContent>
+    <h1>New Employee</h1>
+
+    <div class="add-emp-form" #newEmpForm>
+      <div class="form-group">
+        <label for="name">Full Name <span>*</span></label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="John Doe"
+          [(ngModel)]="newEmp.name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="job">Job <span>*</span></label>
+        <nz-select
+          name="job_id"
+          id="job_id"
+          nzPlaceHolder="Choose"
+          [(ngModel)]="newEmp.job_id"
+        >
+          <nz-option
+            *ngFor="let job of jobList"
+            nzValue="{{ job.id }}"
+            nzLabel="{{ job.name }}"
+          ></nz-option>
+        </nz-select>
+      </div>
+      <div class="form-group">
+        <label for="username">Username <span>*</span></label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="john_doe"
+          [(ngModel)]="newEmp.username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email <span>*</span></label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="johndoe@mail.com"
+          [(ngModel)]="newEmp.email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="branch_name">Branch Name</label>
+        <input
+          type="text"
+          name="branch_name"
+          id="branch_name"
+          placeholder="Romaguera-Crona"
+          [(ngModel)]="newEmp.branch.name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="branch_loc">Branch Location</label>
+        <input
+          type="text"
+          name="branch_loc"
+          id="branch_loc"
+          placeholder="Kulas Light"
+          [(ngModel)]="newEmp.branch.location"
+        />
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input
+          type="text"
+          name="street"
+          id="street"
+          placeholder="Kulas Light"
+          [(ngModel)]="newEmp.address.street"
+        />
+      </div>
+      <div class="form-group">
+        <label for="suite">Suite</label>
+        <input
+          type="text"
+          name="suite"
+          id="suite"
+          placeholder="Apt. 556"
+          [(ngModel)]="newEmp.address.suite"
+        />
+      </div>
+
+      <div class="form-group-btn">
+        <button
+          nz-button
+          nzGhost
+          nzType="primary"
+          (click)="handleCancel()"
+          [ngStyle]="{ marginRight: '5px' }"
+        >
+          Cancel
+        </button>
+        <button
+          nz-button
+          nzType="primary"
+          (click)="onSubmit()"
+          [disabled]="
+            !(
+              newEmp.name.length >= 3 &&
+              newEmp.name.slice(0, 1).toUpperCase() ==
+                newEmp.name.slice(0, 1) &&
+              newEmp.username.length >= 3 &&
+              emailRegex.test(newEmp.email) &&
+              newEmp.job_id
+            )
+          "
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</nz-modal>

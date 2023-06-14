@@ -1,0 +1,13 @@
+<nz-modal
+  [nzVisible]="mo.number == 1 && mo.isVisible"
+  (nzOnCancel)="handleCancel()"
+  [nzCentered]="true"
+  [nzCloseIcon]="false"
+  [nzFooter]="null"
+>
+  <div *nzModalContent>
+    <h1>{{ mo.alert }}</h1>
+    <h3>{{ mo.msg }}</h3>
+    <button (click)="handleCancel()" nz-button nzType="primary">OK</button>
+  </div>
+</nz-modal>

@@ -1,0 +1,296 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Software Engineer",
+      "responsibilities": [
+        "Develop and maintain software applications",
+        "Collaborate with team members on projects",
+        "Write clean and efficient code"
+      ],
+      "skills": [
+        "Proficient in programming languages (e.g., Java, Python)",
+        "Experience with software development frameworks",
+        "Strong problem-solving skills"
+      ],
+      "education": "Bachelor's degree in Computer Science or related field",
+      "experience": "2+ years of software engineering experience"
+    },
+    {
+      "id": 2,
+      "name": "Marketing Manager",
+      "responsibilities": [
+        "Develop and implement marketing strategies",
+        "Manage marketing campaigns and budgets",
+        "Analyze market trends and competition"
+      ],
+      "skills": [
+        "Strong leadership and communication skills",
+        "Knowledge of digital marketing channels",
+        "Analytical and strategic thinking"
+      ],
+      "education": "Bachelor's degree in Marketing or related field",
+      "experience": "5+ years of marketing experience"
+    },
+    {
+      "id": 3,
+      "name": "Sales Representative",
+      "responsibilities": [
+        "Identify and reach out to potential customers",
+        "Present and demonstrate products/services to clients",
+        "Negotiate and close sales deals"
+      ],
+      "skills": [
+        "Excellent communication and interpersonal skills",
+        "Persuasive and goal-oriented mindset",
+        "Ability to build and maintain client relationships"
+      ],
+      "education": "High school diploma or equivalent",
+      "experience": "1+ years of sales experience"
+    },
+    {
+      "id": 4,
+      "name": "Accountant",
+      "responsibilities": [
+        "Prepare financial statements and reports",
+        "Manage accounts payable and receivable",
+        "Ensure compliance with financial regulations"
+      ],
+      "skills": [
+        "Attention to detail and strong numerical skills",
+        "Proficiency in accounting software (e.g., QuickBooks)",
+        "Knowledge of financial laws and regulations"
+      ],
+      "education": "Bachelor's degree in Accounting or related field",
+      "experience": "3+ years of accounting experience"
+    },
+    {
+      "id": 5,
+      "name": "Human Resources Manager",
+      "responsibilities": [
+        "Oversee recruitment and hiring processes",
+        "Manage employee benefits and compensation",
+        "Resolve employee issues and conflicts"
+      ],
+      "skills": [
+        "Knowledge of HR policies and practices",
+        "Strong interpersonal and conflict resolution skills",
+        "Ability to maintain confidentiality"
+      ],
+      "education": "Bachelor's degree in Human Resources or related field",
+      "experience": "4+ years of HR management experience"
+    }
+  ],
+  "emps": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556"
+      },
+      "branch": {
+        "name": "Romaguera-Crona",
+        "location": "Kulas Light"
+      },
+      "job_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "address": {
+        "street": "Victor Plains",
+        "suite": "Suite 879"
+      },
+      "branch": {
+        "name": "Deckow-Crist",
+        "location": "Victor Plains"
+      },
+      "job_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "address": {
+        "street": "Douglas Extension",
+        "suite": "Suite 847"
+      },
+      "branch": {
+        "name": "Romaguera-Jacobson",
+        "location": "Douglas Extension"
+      },
+      "job_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org",
+      "address": {
+        "street": "Hoeger Mall",
+        "suite": "Apt. 692"
+      },
+      "branch": {
+        "name": "Robel-Corkery",
+        "location": "Hoeger Mall"
+      },
+      "job_id": 3
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "email": "Lucio_Hettinger@annie.ca",
+      "address": {
+        "street": "Skiles Walks",
+        "suite": "Suite 351"
+      },
+      "branch": {
+        "name": "Keebler LLC",
+        "location": "Skiles Walks"
+      },
+      "job_id": 3
+    },
+    {
+      "id": 6,
+      "name": "Mrs. Dennis Schulist",
+      "username": "Leopoldo_Corkery",
+      "email": "Karley_Dach@jasper.info",
+      "address": {
+        "street": "Norberto Crossing",
+        "suite": "Apt. 950"
+      },
+      "branch": {
+        "name": "Considine-Lockman",
+        "location": "Norberto Crossing"
+      },
+      "job_id": 4
+    },
+    {
+      "id": 7,
+      "name": "Kurtis Weissnat",
+      "username": "Elwyn.Skiles",
+      "email": "Telly.Hoeger@billy.biz",
+      "address": {
+        "street": "Rex Trail",
+        "suite": "Suite 280"
+      },
+      "branch": {
+        "name": "Johns Group",
+        "location": "Rex Trail"
+      },
+      "job_id": 4
+    },
+    {
+      "id": 8,
+      "name": "Nicholas Runolfsdottir V",
+      "username": "Maxime_Nienow",
+      "email": "Sherwood@rosamond.me",
+      "address": {
+        "street": "Ellsworth Summit",
+        "suite": "Suite 729"
+      },
+      "branch": {
+        "name": "Abernathy Group",
+        "location": "Ellsworth Summit"
+      },
+      "job_id": 5
+    },
+    {
+      "id": 9,
+      "name": "Victoria Brown",
+      "username": "victoria.brown",
+      "email": "victoria.brown@example.com",
+      "address": {
+        "street": "Oak Street",
+        "suite": "Apt. 501"
+      },
+      "branch": {
+        "name": "Thompson Corporation",
+        "location": "Oak Street"
+      },
+      "job_id": 3
+    },
+    {
+      "id": 10,
+      "name": "Alexander Martinez",
+      "username": "alexander.martinez",
+      "email": "alexander.martinez@example.com",
+      "address": {
+        "street": "Maple Avenue",
+        "suite": "Apt. 203"
+      },
+      "branch": {
+        "name": "Wilson Enterprises",
+        "location": "Maple Avenue"
+      },
+      "job_id": 1
+    },
+    {
+      "id": 11,
+      "name": "Emma Davis",
+      "username": "emma.davis",
+      "email": "emma.davis@example.com",
+      "address": {
+        "street": "Chestnut Street",
+        "suite": "Suite 305"
+      },
+      "branch": {
+        "name": "Harrison Group",
+        "location": "Chestnut Street"
+      },
+      "job_id": 2
+    },
+    {
+      "id": 12,
+      "name": "William Anderson",
+      "username": "william.anderson",
+      "email": "william.anderson@example.com",
+      "address": {
+        "street": "Pine Street",
+        "suite": "Apt. 102"
+      },
+      "branch": {
+        "name": "Smith & Co",
+        "location": "Pine Street"
+      },
+      "job_id": 4
+    },
+    {
+      "id": 13,
+      "name": "Sophia Thompson",
+      "username": "sophia.thompson",
+      "email": "sophia.thompson@example.com",
+      "address": {
+        "street": "Elm Avenue",
+        "suite": "Apt. 408"
+      },
+      "branch": {
+        "name": "Johnson Enterprises",
+        "location": "Elm Avenue"
+      },
+      "job_id": 5
+    },
+    {
+      "name": "Alex Johnson",
+      "username": "alex_johnson",
+      "email": "alexjohnson@den.io",
+      "address": {
+        "street": "",
+        "suite": ""
+      },
+      "branch": {
+        "name": "",
+        "location": ""
+      },
+      "job_id": "3",
+      "id": 14
+    }
+  ]
+}

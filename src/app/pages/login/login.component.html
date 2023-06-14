@@ -1,0 +1,36 @@
+<div class="login-form-group">
+  <form (ngSubmit)="submitForm()">
+    <div class="group">
+      <input
+        type="text"
+        required
+        name="username"
+        [(ngModel)]="username"
+        [ngClass]="{ used: username.length }"
+      /><span class="highlight"></span><span class="bar"></span>
+      <label>Name</label>
+    </div>
+    <div class="group">
+      <input
+        type="password"
+        required
+        name="password"
+        [(ngModel)]="password"
+        [ngClass]="{ used: password.length }"
+      /><span class="highlight"></span><span class="bar"></span>
+      <label>Email</label>
+    </div>
+
+    <button
+      class="button buttonBlue"
+      [disabled]="!(username.length >= 3 && password.length >= 3)"
+    >
+      Log in
+      <div class="ripples buttonRipples">
+        <span class="ripplesCircle"></span>
+      </div>
+    </button>
+  </form>
+</div>
+
+<app-ok-modal></app-ok-modal>
