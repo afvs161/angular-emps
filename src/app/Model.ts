@@ -32,7 +32,7 @@ export interface EmpTable {
   address_suite: string;
   branch_name: string;
   branch_location: string;
-  job: string;
+  job: JobFilter;
 }
 
 interface Address {

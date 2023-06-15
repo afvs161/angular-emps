@@ -53,7 +53,7 @@ export class ConfirmModalComponent {
             this.modalService.showModal(
               1,
               'Error',
-              'Employee details could not removed!'
+              'Employee details could not be removed!'
             );
             console.log(error);
           }

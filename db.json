@@ -278,19 +278,34 @@
       "job_id": 5
     },
     {
-      "name": "Alex Johnson",
-      "username": "alex_johnson",
-      "email": "alexjohnson@den.io",
+      "name": "Someone",
+      "username": "someone",
+      "email": "someone@mail.com",
       "address": {
         "street": "",
         "suite": ""
       },
       "branch": {
+        "name": "romaguera",
+        "location": ""
+      },
+      "job_id": "4",
+      "id": 14
+    },
+    {
+      "id": 15,
+      "name": "John",
+      "username": "john",
+      "email": "john@mail.com",
+      "address": {
+        "street": "",
+        "suite": "apraa"
+      },
+      "branch": {
         "name": "",
         "location": ""
       },
-      "job_id": "3",
-      "id": 14
+      "job_id": 2
     }
   ]
 }

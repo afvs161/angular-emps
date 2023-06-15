@@ -7,7 +7,7 @@
   [nzWidth]="700"
 >
   <div *nzModalContent>
-    <h1>New Employee</h1>
+    <h1>{{ mo.alert }}</h1>
 
     <div class="add-emp-form" #newEmpForm>
       <div class="form-group">
@@ -30,8 +30,9 @@
         >
           <nz-option
             *ngFor="let job of jobList"
-            nzValue="{{ job.id }}"
-            nzLabel="{{ job.name }}"
+            [nzValue]="job.id"
+            [nzSelected]="nzValue === job.id"
+            [nzLabel]="job.name"
           ></nz-option>
         </nz-select>
       </div>

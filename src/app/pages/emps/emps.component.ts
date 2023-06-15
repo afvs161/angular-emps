@@ -61,9 +61,12 @@ export class EmpsComponent implements OnInit {
     });
   }
 
-  getJobName(id: number): string {
+  getJobName(id: number): JobFilter {
     const job = this.jobs.find((obj: JobFilter) => obj.id == id);
-    return job ? job.text : 'Unknown';
+
+    return job
+      ? { id: job.id, text: job.text, value: job.value }
+      : { id: 0, text: '', value: '' };
   }
 
   delete(obj: EmpTable): void {
@@ -77,10 +80,16 @@ export class EmpsComponent implements OnInit {
   }
 
   update(obj: EmpTable): void {
-    console.log('update => ' + obj.id);
+    this.modalService.showModal(
+      3,
+      'Edit Employee Details',
+      '',
+      'UPDATE_EMP',
+      obj
+    );
   }
 
   addNewEmp() {
-    this.modalService.showModal(3);
+    this.modalService.showModal(3, 'New Employee', '', 'ADD_EMP');
   }
 }

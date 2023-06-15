@@ -16,10 +16,6 @@ const httpOptions = {
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  // getEmpList(): Observable<Emp[]> {
-  //   return this.http.get<Emp[]>(`${environment.BASE_URL}/emps`);
-  // }
-
   getJobList(): Observable<Job[]> {
     return this.http.get<Job[]>(`${environment.BASE_URL}/jobs`);
   }
@@ -36,6 +32,15 @@ export class HttpService {
     const url = `${environment.BASE_URL}/emps/${obj.id}`;
     return this.http
       .delete(url)
+      .pipe(
+        switchMap(() => this.http.get<Emp[]>(`${environment.BASE_URL}/emps`))
+      );
+  }
+
+  updateEmp(obj: Emp): Observable<Emp[]> {
+    const url = `${environment.BASE_URL}/emps/${obj.id}`;
+    return this.http
+      .put<Emp>(url, obj, httpOptions)
       .pipe(
         switchMap(() => this.http.get<Emp[]>(`${environment.BASE_URL}/emps`))
       );
