@@ -82,7 +82,7 @@ export class EmpsComponent implements OnInit {
   update(obj: EmpTable): void {
     this.modalService.showModal(
       3,
-      'Edit Employee Details',
+      'Change Employee Details',
       '',
       'UPDATE_EMP',
       obj

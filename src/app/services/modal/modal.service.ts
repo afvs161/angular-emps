@@ -17,7 +17,7 @@ export class ModalService {
   constructor() {}
 
   showModal(
-    number,
+    number: number,
     alert?: string,
     msg?: string,
     action?: string,

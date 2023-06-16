@@ -27,7 +27,26 @@ export class AddJobModalComponent {
   ) {}
 
   ngOnInit(): void {
-    this.modalService.modalState$.subscribe((obj) => (this.mo = obj));
+    this.modalService.modalState$.subscribe((obj: ModalObj) => {
+      this.mo = obj;
+      if (obj.jobObj) {
+        this.newJob.id = obj.jobObj.id;
+        this.newJob.name = obj.jobObj.name;
+        this.newJob.education = obj.jobObj.education;
+        this.newJob.experience = obj.jobObj.experience;
+        this.newJob.responsibilities = obj.jobObj.responsibilities.join('. ');
+        this.newJob.skills = obj.jobObj.skills.join('. ');
+      } else {
+        this.newJob = {
+          id: 0,
+          name: '',
+          education: '',
+          experience: '',
+          responsibilities: '',
+          skills: '',
+        };
+      }
+    });
   }
 
   onSubmit() {
@@ -64,6 +83,43 @@ export class AddJobModalComponent {
                 1,
                 'Error',
                 'New job could not be added!'
+              );
+            }
+          );
+        }
+      }
+
+      case 'UPDATE_JOB': {
+        const newObj: Job = {
+          id: this.newJob.id,
+          name: this.newJob.name,
+          education: this.newJob.education,
+          experience: this.newJob.experience,
+          responsibilities: this.validateTextareaValue(
+            this.newJob.responsibilities
+          ),
+          skills: this.validateTextareaValue(this.newJob.skills),
+        };
+        if (
+          newObj.name.length >= 3 &&
+          newObj.responsibilities.length >= 1 &&
+          newObj.skills.length >= 1
+        ) {
+          this.http.updateJob(newObj).subscribe(
+            (arr) => {
+              this.jobListService.updateJobList(arr);
+              this.modalService.showModal(
+                1,
+                'Success',
+                'Job details was successfully updated!'
+              );
+            },
+            (err) => {
+              console.log(err);
+              this.modalService.showModal(
+                1,
+                'Error',
+                'Job details could not be updated!'
               );
             }
           );

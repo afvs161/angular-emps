@@ -62,4 +62,13 @@ export class HttpService {
         switchMap(() => this.http.get<Job[]>(`${environment.BASE_URL}/jobs`))
       );
   }
+
+  updateJob(obj: Job): Observable<Job[]> {
+    const url = `${environment.BASE_URL}/jobs/${obj.id}`;
+    return this.http
+      .put<Job>(url, obj, httpOptions)
+      .pipe(
+        switchMap(() => this.http.get<Job[]>(`${environment.BASE_URL}/jobs`))
+      );
+  }
 }

@@ -48,7 +48,7 @@ export class JobsComponent implements OnInit {
     );
   }
 
-  updateJob(obj: NewJob) {
-    console.log(obj);
+  updateJob(obj: Job) {
+    this.modalService.showModal(4, 'Change Job Details', '', 'UPDATE_JOB', {}, obj)
   }
 }
