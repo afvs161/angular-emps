@@ -30,6 +30,15 @@ export class SidebarComponent implements OnInit {
   }
 
   logOut(): void {
-    this.modalService.showModal(2, 'Logging out', 'Do you really want to log out?', 'LOG_OUT');
+    this.modalService.showModal(
+      2,
+      'Logging out',
+      'Do you really want to log out?',
+      'LOG_OUT'
+    );
+  }
+
+  onInput(value: string) {
+    console.log(value);
   }
 }

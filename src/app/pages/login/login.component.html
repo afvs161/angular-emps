@@ -1,5 +1,6 @@
 <div class="login-form-group">
   <form (ngSubmit)="submitForm()">
+    <h2>Employee Management - Angular</h2>
     <div class="group">
       <input
         type="text"
@@ -8,17 +9,25 @@
         [(ngModel)]="username"
         [ngClass]="{ used: username.length }"
       /><span class="highlight"></span><span class="bar"></span>
-      <label>Name</label>
+      <label>Username</label>
     </div>
     <div class="group">
       <input
-        type="password"
+        type="{{ passwordVisible ? 'text' : 'password' }}"
         required
         name="password"
         [(ngModel)]="password"
         [ngClass]="{ used: password.length }"
-      /><span class="highlight"></span><span class="bar"></span>
-      <label>Email</label>
+        #passwordInput
+      />
+      <span
+        nz-icon
+        class="password-eye-icon"
+        [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+        (click)="togglePasswordVisible()"
+      ></span>
+      <span class="highlight"></span><span class="bar"></span>
+      <label>Password</label>
     </div>
 
     <button

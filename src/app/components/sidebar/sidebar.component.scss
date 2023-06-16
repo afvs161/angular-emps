@@ -66,6 +66,19 @@
     padding: 0;
     background: #fff;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+
+    .search-input {
+      height: 30px;
+      border: 2px solid #e7e7e7;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-30%);
+      margin-left: -1.5rem;
+      color: #969696;
+    }
   }
 
   nz-content {

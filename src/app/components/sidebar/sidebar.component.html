@@ -49,6 +49,18 @@
             [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
           ></span>
         </span>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search..."
+          (keyup)="onInput($event.target.value)"
+        />
+        <span
+          nz-icon
+          nzType="search"
+          class="search-icon"
+          nzTheme="outline"
+        ></span>
       </div>
     </nz-header>
     <nz-content>
