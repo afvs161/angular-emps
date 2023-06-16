@@ -11,7 +11,7 @@ import { ModalService } from 'src/app/services/modal/modal.service';
   styleUrls: ['./emps.component.scss'],
 })
 export class EmpsComponent implements OnInit {
-  emps: EmpTable[] = [];
+  emps: EmpTable[];
   jobs: JobFilter[] = [];
   listOfColumns = [
     {
@@ -19,7 +19,7 @@ export class EmpsComponent implements OnInit {
       filterMultiple: true,
       listOfFilter: this.jobs,
       filterFn: (selectedJobIds: number[], item) =>
-        selectedJobIds.includes(item.job),
+        selectedJobIds.includes(item.job.value),
     },
     { name: 'Name' },
     { name: 'Username' },
