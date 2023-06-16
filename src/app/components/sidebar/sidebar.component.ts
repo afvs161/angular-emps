@@ -11,6 +11,7 @@ import { SearchService } from 'src/app/services/search/search.service';
 export class SidebarComponent implements OnInit {
   isCollapsed = true;
   currentRoute: string;
+  showSearchInput: boolean;
 
   constructor(
     private router: Router,
@@ -24,6 +25,10 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchService.showSearchInput$.subscribe(
+      (value: boolean) => (this.showSearchInput = value)
+    );
+
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         let user = localStorage.getItem('user');

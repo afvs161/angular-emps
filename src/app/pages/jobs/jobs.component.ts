@@ -3,6 +3,7 @@ import { Job, NewJob } from 'src/app/Model';
 import { HttpService } from 'src/app/services/http/http.service';
 import { JobListService } from 'src/app/services/job-list/job-list.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
   selector: 'app-jobs',
@@ -16,10 +17,12 @@ export class JobsComponent implements OnInit {
   constructor(
     private jobListService: JobListService,
     private modalService: ModalService,
-    private http: HttpService
+    private searchService: SearchService
   ) {}
 
   ngOnInit(): void {
+    this.searchService.setShowSearchInput(false)
+
     this.jobListService
       .getJobList()
       .subscribe((data: Job[]) => (this.jobs = data));

@@ -50,12 +50,14 @@
           ></span>
         </span>
         <input
+          *ngIf="showSearchInput"
           type="text"
           class="search-input"
           placeholder="Search..."
           (input)="onInput($event.target.value)"
         />
         <span
+          *ngIf="showSearchInput"
           nz-icon
           nzType="search"
           class="search-icon"

@@ -1,21 +1,15 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, OnChanges {
-  constructor() {
-    // console.log('constructor loaded');
-  }
+export class HomeComponent implements OnInit {
+  constructor(private searchService: SearchService) {}
 
   ngOnInit(): void {
-    // console.log('ngOnInit loaded');
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log('ngOnInit loaded');
-    // console.log(changes);
+    this.searchService.setShowSearchInput(false);
   }
 }
