@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal/modal.service';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +12,11 @@ export class SidebarComponent implements OnInit {
   isCollapsed = true;
   currentRoute: string;
 
-  constructor(private router: Router, private modalService: ModalService) {
+  constructor(
+    private router: Router,
+    private modalService: ModalService,
+    private searchService: SearchService
+  ) {
     let user = localStorage.getItem('user');
     if (!user) {
       this.router.navigate(['login']);
@@ -39,6 +44,6 @@ export class SidebarComponent implements OnInit {
   }
 
   onInput(value: string) {
-    console.log(value);
+    this.searchService.setSearchValue(value);
   }
 }

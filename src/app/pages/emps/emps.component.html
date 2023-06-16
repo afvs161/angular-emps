@@ -1,4 +1,4 @@
-<nz-table #filterTable [nzData]="emps" nzTableLayout="fixed">
+<nz-table #filterTable [nzData]="search.length ? filteredEmps : emps" nzTableLayout="fixed">
   <thead>
     <tr>
       <th

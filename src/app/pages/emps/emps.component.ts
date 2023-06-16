@@ -4,6 +4,7 @@ import { Emp, EmpTable, Job, JobFilter } from 'src/app/Model';
 import { EmpListService } from 'src/app/services/emp-list/emp-list.service';
 import { HttpService } from 'src/app/services/http/http.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
   selector: 'app-emps',
@@ -12,6 +13,8 @@ import { ModalService } from 'src/app/services/modal/modal.service';
 })
 export class EmpsComponent implements OnInit {
   emps: EmpTable[];
+  filteredEmps: EmpTable[];
+  search: string = '';
   jobs: JobFilter[] = [];
   listOfColumns = [
     {
@@ -32,7 +35,8 @@ export class EmpsComponent implements OnInit {
   constructor(
     private http: HttpService,
     private modalService: ModalService,
-    private empListService: EmpListService
+    private empListService: EmpListService,
+    private searchService: SearchService
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +62,17 @@ export class EmpsComponent implements OnInit {
         branch_location: emp.branch.location,
         job: this.getJobName(emp.job_id),
       }));
+    });
+
+    this.searchService.search$.subscribe((value) => {
+      this.search = value;
+      let filteredEmps = this.emps.filter(
+        (item) =>
+          item.name.toLowerCase().includes(value.toLowerCase()) ||
+          item.username.toLowerCase().includes(value.toLowerCase()) ||
+          item.email.toLowerCase().includes(value.toLowerCase())
+      );
+      this.filteredEmps = filteredEmps;
     });
   }
 
