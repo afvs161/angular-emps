@@ -52,4 +52,14 @@ export interface ModalObj {
   msg?: string;
   action?: string;
   obj?: EmpTable;
+  jobObj?: Job;
+}
+
+export interface NewJob {
+  id: number;
+  name: string;
+  responsibilities: string;
+  skills: string;
+  education: string;
+  experience: string;
 }

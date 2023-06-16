@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { EmpTable, ModalObj } from 'src/app/Model';
+import { Job, ModalObj } from 'src/app/Model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,8 @@ export class ModalService {
     alert?: string,
     msg?: string,
     action?: string,
-    obj?: EmpTable
+    obj?,
+    jobObj?: Job
   ) {
     const newState: ModalObj = {
       number,
@@ -30,6 +31,7 @@ export class ModalService {
       isVisible: true,
       action,
       obj,
+      jobObj,
     };
     this.modalState.next(newState);
   }

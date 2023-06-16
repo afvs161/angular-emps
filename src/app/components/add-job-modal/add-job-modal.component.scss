@@ -1,0 +1,46 @@
+.add-emp-form {
+  width: 100%;
+  height: 220px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  .form-group {
+    label {
+      font-size: 14px;
+      margin-right: 5px;
+      line-height: 2;
+
+      span {
+        color: red;
+      }
+    }
+
+    &-ta-wrapper {
+      grid-column: 1/4;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-textarea {
+      display: flex;
+      flex-direction: column;
+
+      textarea {
+        width: 350px;
+        height: 80px;
+        max-height: 100px;
+      }
+
+      &-span {
+        color: #8c8c8c;
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+  }
+
+  .form-group-btn {
+    margin: 10px auto 0;
+    grid-column: 1/4;
+  }
+}

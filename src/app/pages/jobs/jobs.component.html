@@ -1,1 +1,41 @@
-<p>jobs works!</p>
+<button nz-button nzType="primary" (click)="addNewJob()">Add</button>
+<div class="job-container">
+  <nz-card
+    class="job-item"
+    [nzActions]="[actionSetting, actionEdit]"
+    *ngFor="let job of jobs"
+    [ngClass]="{ 'job-item-hide-wrapper': exp === job.id }"
+  >
+    <nz-card-meta
+      class="job-item-header"
+      (click)="expand(job.id)"
+      nzTitle="{{ job.name }}"
+      nzDescription="{{ job.education ? job.education.substr(0, 30) : 'No prior education required' }} ..."
+      [nzAvatar]="avatarTemplate"
+    ></nz-card-meta>
+    <div
+      class="job-item-collapse"
+      [ngClass]="{ 'job-item-hide': exp !== job.id }"
+    >
+      <p>{{ job.education ? job.education : 'No prior education required'}}</p>
+      <p>{{ job.experience ? job.experience : 'No prior experience required' }}</p>
+      <span class="job-item-tag">Responsibilities:</span> &nbsp;
+      <span *ngFor="let responsibility of job.responsibilities"
+        >{{ responsibility }} <br
+      /></span>
+      <span class="job-item-tag">Skills:</span> &nbsp;
+      <span *ngFor="let skill of job.skills">{{ skill }} <br /></span>
+    </div>
+
+    <ng-template #avatarTemplate>
+      <span nz-icon nzType="tag" nzTheme="outline"></span>
+    </ng-template>
+
+    <ng-template #actionSetting>
+      <span nz-icon nzType="edit" (click)="updateJob(job)"></span>
+    </ng-template>
+    <ng-template #actionEdit>
+      <span nz-icon nzType="delete" (click)="deleteJob(job)"></span>
+    </ng-template>
+  </nz-card>
+</div>

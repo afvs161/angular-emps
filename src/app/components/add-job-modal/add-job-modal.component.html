@@ -1,0 +1,108 @@
+<nz-modal
+  [nzVisible]="mo.number == 4 && mo.isVisible"
+  (nzOnCancel)="handleCancel()"
+  [nzCentered]="true"
+  [nzCloseIcon]="false"
+  [nzFooter]="null"
+  [nzWidth]="850"
+>
+  <div *nzModalContent>
+    <h1>{{ mo.alert }}</h1>
+
+    <div class="add-emp-form" #newEmpForm>
+      <div class="form-group">
+        <label for="name">Job Name <span>*</span></label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Marketing Manager"
+          [(ngModel)]="newJob.name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="edu">Education</label>
+        <input
+          type="text"
+          name="edu"
+          id="edu"
+          placeholder="Bachelor's degree in Marketing or related field"
+          [(ngModel)]="newJob.education"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exp">Experience</label>
+        <input
+          type="text"
+          name="exp"
+          id="exp"
+          placeholder="5+ years of marketing experience"
+          [(ngModel)]="newJob.experience"
+        />
+      </div>
+      <div class="form-group-ta-wrapper">
+        <div class="form-group form-group-textarea">
+          <label for="res">Responsibilities <span>*</span></label>
+          <textarea
+            name="res"
+            id="res"
+            placeholder="Develop and implement marketing strategies"
+            [(ngModel)]="newJob.responsibilities"
+          ></textarea>
+          <span class="form-group-textarea-span"
+            >{{
+              newJob.responsibilities.length < 30
+                ? 30 - newJob.responsibilities.length
+                : newJob.responsibilities.length
+            }}
+            characters {{ newJob.responsibilities.length < 30 ? "left" : null }}</span
+          >
+        </div>
+        <div class="form-group form-group-textarea">
+          <label for="skills">Skills <span>*</span></label>
+          <textarea
+            name="skills"
+            id="skills"
+            placeholder="Knowledge of digital marketing channels"
+            [(ngModel)]="newJob.skills"
+          ></textarea>
+          <span class="form-group-textarea-span"
+            >{{
+              newJob.skills.length < 30
+                ? 30 - newJob.skills.length
+                : newJob.skills.length
+            }}
+            characters {{ newJob.skills.length < 30 ? "left" : null }}</span
+          >
+        </div>
+      </div>
+
+      <div class="form-group-btn">
+        <button
+          nz-button
+          nzGhost
+          nzType="primary"
+          (click)="handleCancel()"
+          [ngStyle]="{ marginRight: '5px' }"
+        >
+          Cancel
+        </button>
+
+        <button
+          nz-button
+          nzType="primary"
+          (click)="onSubmit()"
+          [disabled]="
+            !(
+              newJob.name.length >= 3 &&
+              newJob.responsibilities.length >= 30 &&
+              newJob.skills.length >= 30
+            )
+          "
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</nz-modal>

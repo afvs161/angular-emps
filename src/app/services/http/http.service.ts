@@ -45,4 +45,21 @@ export class HttpService {
         switchMap(() => this.http.get<Emp[]>(`${environment.BASE_URL}/emps`))
       );
   }
+
+  addNewJob(obj: Job) {
+    return this.http
+      .post<Job>(`${environment.BASE_URL}/jobs`, obj, httpOptions)
+      .pipe(
+        switchMap(() => this.http.get<Job[]>(`${environment.BASE_URL}/jobs`))
+      );
+  }
+
+  deleteJob(obj: Job): Observable<Job[]> {
+    const url = `${environment.BASE_URL}/jobs/${obj.id}`;
+    return this.http
+      .delete(url)
+      .pipe(
+        switchMap(() => this.http.get<Job[]>(`${environment.BASE_URL}/jobs`))
+      );
+  }
 }

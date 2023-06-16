@@ -68,7 +68,7 @@ export class AddEmpModalComponent {
         this.newEmp.name = obj.obj.name;
         this.newEmp.username = obj.obj.username;
         this.newEmp.email = obj.obj.email;
-        this.newEmp.job_id = obj.obj.job.id;
+        this.newEmp.job_id = obj.obj.job?.id;
         this.newEmp.address.street = obj.obj.address_street;
         this.newEmp.address.suite = obj.obj.address_suite;
         this.newEmp.branch.name = obj.obj.branch_name;

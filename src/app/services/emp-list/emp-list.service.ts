@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Emp } from 'src/app/Model';
 import { environment } from 'src/environment/env';
-import { EmpDataService } from '../emp-data/emp-data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,9 +19,7 @@ export class EmpListService {
   fetchEmpList(): void {
     this.http
       .get<Emp[]>(`${environment.BASE_URL}/emps`)
-      .subscribe((data: Emp[]) => {
-        this.empListSubject.next(data);
-      });
+      .subscribe((data: Emp[]) => this.empListSubject.next(data));
   }
 
   updateEmpList(updatedData: Emp[]) {

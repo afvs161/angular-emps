@@ -79,6 +79,46 @@
       ],
       "education": "Bachelor's degree in Human Resources or related field",
       "experience": "4+ years of HR management experience"
+    },
+    {
+      "id": 7,
+      "name": "new",
+      "education": "education",
+      "experience": "exprience",
+      "responsibilities": [
+        "fjdslakfjdsaljflskajflsakdfjslajdflkjd"
+      ],
+      "skills": [
+        "fdlsjakflsdakjf;lskajfslkdjfl;sakjflsakjdf"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "name",
+      "education": "education",
+      "experience": "experience",
+      "responsibilities": [
+        "dev fldsjfkldsja",
+        "fsdjlafjdsla",
+        "f dljafldsjfsa",
+        "df asldfjsaldfk, fdksjfsjafs"
+      ],
+      "skills": [
+        "fdsjflsja",
+        "df sldfjaslfjsalfjslajfdskajflsa"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "name",
+      "education": "",
+      "experience": "",
+      "responsibilities": [
+        "fdksjflksajflsdkajflskajfjsafsalfjsal;fk"
+      ],
+      "skills": [
+        "fjdsal;fkjslakjdfslajkfsladfkjsadkjfsa"
+      ]
     }
   ],
   "emps": [
@@ -294,18 +334,18 @@
     },
     {
       "id": 15,
-      "name": "John",
+      "name": "Name",
       "username": "john",
       "email": "john@mail.com",
       "address": {
         "street": "",
-        "suite": "apraa"
+        "suite": ""
       },
       "branch": {
-        "name": "",
+        "name": "fdsf",
         "location": ""
       },
-      "job_id": 2
+      "job_id": 1
     }
   ]
 }

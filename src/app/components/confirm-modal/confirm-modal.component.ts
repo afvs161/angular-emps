@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Emp, ModalObj } from 'src/app/Model';
 import { EmpListService } from 'src/app/services/emp-list/emp-list.service';
 import { HttpService } from 'src/app/services/http/http.service';
+import { JobListService } from 'src/app/services/job-list/job-list.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class ConfirmModalComponent {
     private modalService: ModalService,
     private router: Router,
     private http: HttpService,
-    private empListService: EmpListService
+    private empListService: EmpListService,
+    private jobListService: JobListService
   ) {}
 
   ngOnInit() {
@@ -56,6 +58,27 @@ export class ConfirmModalComponent {
               'Employee details could not be removed!'
             );
             console.log(error);
+          }
+        );
+      }
+
+      case 'DELETE_JOB': {
+        this.http.deleteJob(this.mo.jobObj).subscribe(
+          (arr) => {
+            this.jobListService.updateJobList(arr);
+            this.modalService.showModal(
+              1,
+              'Success',
+              'Job was successfully removed!'
+            );
+          },
+          (err) => {
+            console.log(err);
+            this.modalService.showModal(
+              1,
+              'Error',
+              'Job could not be removed!'
+            );
           }
         );
       }
