@@ -81,7 +81,7 @@ export class EmpsComponent implements OnInit {
 
     return job
       ? { id: job.id, text: job.text, value: job.value }
-      : { id: 0, text: '', value: '' };
+      : { id: 0, text: 'Unknown', value: 'Unknown' };
   }
 
   delete(obj: EmpTable): void {
