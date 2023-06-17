@@ -63,3 +63,8 @@ export interface NewJob {
   education: string;
   experience: string;
 }
+
+export interface Userinfo {
+  username: string;
+  password: string;
+}

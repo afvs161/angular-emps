@@ -1,4 +1,8 @@
 {
+  "userinfo": {
+    "username": "admin",
+    "password": "admin"
+  },
   "jobs": [
     {
       "id": 1,

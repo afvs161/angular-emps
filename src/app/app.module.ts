@@ -26,6 +26,8 @@ import { JobsComponent } from './pages/jobs/jobs.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AddJobModalComponent } from './components/add-job-modal/add-job-modal.component';
+import { PasswordComponent } from './components/password/password.component';
+import { UsernameComponent } from './components/username/username.component';
 
 registerLocaleData(en);
 
@@ -42,6 +44,8 @@ registerLocaleData(en);
     OkModalComponent,
     AddEmpModalComponent,
     AddJobModalComponent,
+    PasswordComponent,
+    UsernameComponent,
   ],
   imports: [
     BrowserModule,

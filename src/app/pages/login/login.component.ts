@@ -6,7 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { Userinfo } from 'src/app/Model';
 import { ModalService } from 'src/app/services/modal/modal.service';
+import { UserinfoService } from 'src/app/services/userinfo/userinfo.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +16,7 @@ import { ModalService } from 'src/app/services/modal/modal.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  userinfo: Userinfo;
   username: string = '';
   password: string = '';
   passwordVisible: boolean = false;
@@ -22,7 +25,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private modalService: ModalService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private userinfoService: UserinfoService
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +34,10 @@ export class LoginComponent implements OnInit {
     if (user) {
       this.router.navigate(['home']);
     }
+
+    this.userinfoService
+      .getUserinfo()
+      .subscribe((obj: Userinfo) => (this.userinfo = obj));
   }
 
   togglePasswordVisible(): void {
@@ -38,7 +46,10 @@ export class LoginComponent implements OnInit {
   }
 
   submitForm(): void {
-    if (this.username == 'user' && this.password == 'user') {
+    if (
+      this.username === this.userinfo.username &&
+      this.password === this.userinfo.password
+    ) {
       localStorage.setItem('user', 'blessed');
       this.router.navigate(['home']);
     } else {
