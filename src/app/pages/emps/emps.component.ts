@@ -64,7 +64,6 @@ export class EmpsComponent implements OnInit {
       }));
     });
 
-    this.searchService.setShowSearchInput(true);
     this.searchService.search$.subscribe((value) => {
       this.search = value;
       let filteredEmps = this.emps.filter(

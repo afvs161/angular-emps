@@ -6,16 +6,12 @@ import { Subject } from 'rxjs';
 })
 export class SearchService {
   private searchSubject = new Subject<string>();
-  search$ = this.searchSubject.asObservable();
-
   private showSearchInputSubject = new Subject<boolean>();
+
+  search$ = this.searchSubject.asObservable();
   showSearchInput$ = this.showSearchInputSubject.asObservable();
 
   setSearchValue(value: string): void {
     this.searchSubject.next(value);
-  }
-
-  setShowSearchInput(value: boolean): void {
-    this.showSearchInputSubject.next(value);
   }
 }

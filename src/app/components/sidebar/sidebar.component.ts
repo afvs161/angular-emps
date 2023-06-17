@@ -24,17 +24,18 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.searchService.showSearchInput$.subscribe(
-      (value: boolean) => (this.showSearchInput = value)
-    );
+  ngAfterContentInit() {
+    this.showSearchInput = this.router.url === '/home/employees';
+  }
 
+  ngOnInit(): void {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         let user = localStorage.getItem('user');
         if (!user) {
           this.router.navigate(['login']);
         }
+        this.showSearchInput = event.url === '/home/employees';
       }
     });
   }

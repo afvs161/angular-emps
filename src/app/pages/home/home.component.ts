@@ -9,7 +9,5 @@ import { SearchService } from 'src/app/services/search/search.service';
 export class HomeComponent implements OnInit {
   constructor(private searchService: SearchService) {}
 
-  ngOnInit(): void {
-    this.searchService.setShowSearchInput(false);
-  }
+  ngOnInit(): void {}
 }

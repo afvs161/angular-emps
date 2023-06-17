@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Job, NewJob } from 'src/app/Model';
-import { HttpService } from 'src/app/services/http/http.service';
+import { Job } from 'src/app/Model';
 import { JobListService } from 'src/app/services/job-list/job-list.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
 import { SearchService } from 'src/app/services/search/search.service';
@@ -21,8 +20,6 @@ export class JobsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchService.setShowSearchInput(false)
-
     this.jobListService
       .getJobList()
       .subscribe((data: Job[]) => (this.jobs = data));
@@ -52,6 +49,13 @@ export class JobsComponent implements OnInit {
   }
 
   updateJob(obj: Job) {
-    this.modalService.showModal(4, 'Change Job Details', '', 'UPDATE_JOB', {}, obj)
+    this.modalService.showModal(
+      4,
+      'Change Job Details',
+      '',
+      'UPDATE_JOB',
+      {},
+      obj
+    );
   }
 }
